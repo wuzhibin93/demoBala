@@ -41,9 +41,8 @@ chmod 755 installES_cluster.sh
 
 在运行脚本的时候加上集群名称与集群中每个节点的ip地址
 
-eg:
-```
-./installES_cluster.sh <集群名称> <<IP:PORT>> <<IP:PORT>> <<IP:PORT>>
-```
+eg:\
+`./installES_cluster.sh <集群名称> <<IP:PORT>> <<IP:PORT>> <<IP:PORT>>`
+
 
 
