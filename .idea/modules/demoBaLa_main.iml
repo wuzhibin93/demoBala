@@ -23,6 +23,7 @@
             <array />
           </option>
           <option name="multiPlatform" value="true" />
+          <option name="coroutinesState" value="warn" />
         </compilerArguments>
       </configuration>
     </facet>
@@ -32,14 +33,8 @@
     <facet type="web" name="Web Gradle : demoBaLa-1.0-SNAPSHOT.war">
       <configuration>
         <webroots>
-          <root url="file://D:\IDEA_boot\demoBaLa\src\main\webapp" relative="/" />
+          <root url="file://D:\IDEA_boot\demoBala\src\main\webapp" relative="/" />
         </webroots>
-        <sourceRoots>
-          <root url="file://$MODULE_DIR$/../../src/main/groovy" />
-          <root url="file://$MODULE_DIR$/../../src/main/java" />
-          <root url="file://$MODULE_DIR$/../../src/main/kotlin" />
-          <root url="file://$MODULE_DIR$/../../src/main/resources" />
-        </sourceRoots>
       </configuration>
     </facet>
   </component>
