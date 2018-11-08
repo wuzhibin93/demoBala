@@ -29,7 +29,10 @@ import java.util.function.BiConsumer;
  * @Date : Created in 14:26 2018/9/20
  */
 public class BulkComplete {
-    public void bulkCoo(String index,String type,IndexRequest indexRequest){
+
+
+
+    private static void bulkCoo(String index,String type,IndexRequest indexRequest){
         RestHighLevelClient client = client();
         Settings settings = Settings.EMPTY;
         //构建线程池
@@ -101,10 +104,10 @@ public class BulkComplete {
         }
 
     }
-    public RestHighLevelClient client(){
+    private static RestHighLevelClient client(){
         return new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost("localhost",9200,"http")
+                        new HttpHost("192.168.174.123",9200,"http")
                 )
         );
     }

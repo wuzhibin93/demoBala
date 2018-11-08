@@ -78,7 +78,7 @@ class getClient{
     static RestHighLevelClient getElastic() {
         return new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost("192.168.174.141", 9200, "http")
+                        new HttpHost("192.168.174.123", 9200, "http")
                 )
         );
     }

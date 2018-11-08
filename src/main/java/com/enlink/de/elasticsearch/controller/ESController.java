@@ -37,7 +37,7 @@ public class ESController {
                 + "\"message\":\"trying out Elasticsearch\"" + "}";
 
         for (int i = 0; i < 30; i++) {
-            postRequest("caseBase", "doc", "2018-01-05 15:33:54" , "2018-01-12 10:23:18");
+            postRequest("casebase", "doc", "2018-01-05 15:33:54" , jsonString);
         }
         getElastic().close();
     }
@@ -115,7 +115,7 @@ public class ESController {
     private static RestHighLevelClient getElastic() {
         return new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost("localhost", 9200, "http")
+                        new HttpHost("192.168.174.123", 9200, "http")
                 )
         );
     }
