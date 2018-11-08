@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.enlink.de.pemca.dao.CertificateDao">
+    <select id="queryAll" resultType="com.enlink.de.pemca.entity.Certificate">
+        select * from certificate;
+    </select>
+
+    <select id="queryOnr" resultType="com.enlink.de.pemca.entity.Certificate">
+        select * from certificate
+        where id = #{id}
+    </select>
+
+    <insert id="addCer">
+        insert into certificate(id,cerName,cerMainLogin,cerShortLogin,create_at)
+        values (#{id},#{cerName},#{cerMainLogin},#{cerShortLogin},#{create_at})
+    </insert>
+
+    <delete id="deleteCer">
+        delete from certificate
+        where id = #{id}
+    </delete>
+
+    <update id="updateCer">
+        update certificate
+        <set>
+            <if test="cerMainLogin != null">
+                cerMainLogin = #{cerMainLogin},
+            </if>
+            <if test="cerName != null">
+                cerName = #{cerName},
+            </if>
+            <if test="cerShortLogin != null">
+                cerShortName = #{cerShortName},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

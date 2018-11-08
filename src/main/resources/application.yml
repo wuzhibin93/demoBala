@@ -1,0 +1,58 @@
+server:
+  port: 8087
+
+elasticsearch:
+  hosts: 127.0.0.1:9200
+  username:
+  password:
+  index:
+    logSetting: .log-setting
+    logDownload: .log-download
+    appLibrary: .app-library
+    topRanking: top-ranking
+  # 查询相关设置
+  query:
+    maxTotal: 10000
+  # 统计周期
+  count:
+    cycles: day,month,year
+  # 别名相关设置
+  aliases:
+    # 别名前缀
+    prefixs: user,admin,res,system
+
+  filebeat:
+    version: 6.3.1
+    index: filebeat
+  metribeat:
+    version: 6.3.1
+    # 临时文件保存路径
+  file:
+    tmp: /usr/local/enlink/upload/download/logs/
+    download: /usr/local/enlink/upload/download/logs/
+
+#配置mysql的连接配置
+spring:
+  datasource:
+    driver-class-name : com.mysql.cj.jdbc.Driver
+    url: "jdbc:mysql://localhost:3306/enlink?characterEncoding=utf8"
+    username: root
+    password: 123456
+      # 使用druid数据源
+    type: com.alibaba.druid.pool.DruidDataSource
+    filters: stat
+    maxActive: 20
+    initialSize: 1
+    maxWait: 60000
+    minIdle: 1
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 300000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxOpenPreparedStatements: 20
+mybatis:
+  mapper-locations : classpath:mapper/*.xml
+  type-aliases-package: com.enlink.de.elasticsearch.entity

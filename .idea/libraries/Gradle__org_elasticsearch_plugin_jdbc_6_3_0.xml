@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.elasticsearch.plugin:jdbc:6.3.0">
+    <CLASSES>
+      <root url="jar://$MAVEN_REPOSITORY$/caches/modules-2/files-2.1/org.elasticsearch.plugin/jdbc/6.3.0/8defe1e1992b5cb10a02efa6ced061821d08349e/jdbc-6.3.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
