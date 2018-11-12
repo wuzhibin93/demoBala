@@ -44,6 +44,10 @@ chmod 755 installES_cluster.sh
 eg:
 `./installES_cluster.sh <集群名称> <IP:PORT> <IP:PORT> <IP:PORT>`
 
+<<<<<<< HEAD
 ###A Little Change
     but,ther are not has changed
+=======
+
+>>>>>>> 43bd7208e905e48c2cf657191672098486327c36
   
