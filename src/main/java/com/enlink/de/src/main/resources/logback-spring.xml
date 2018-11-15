@@ -26,12 +26,12 @@
     </root>
 
     <!-- logback为java中的包 -->
-    <logger name="com.enlink.sqlite"></logger>
-    <logger name="com.enlink.controller"></logger>
-    <logger name="com.enlink.services"></logger>
+    <logger name="main.java.com.enlink.de.src.main.java.com.enlink.sqlite"></logger>
+    <logger name="main.java.com.enlink.de.src.main.java.com.enlink.controller"></logger>
+    <logger name="main.java.com.enlink.de.src.main.java.com.enlink.services"></logger>
 
     <!-- logback 类的全路径 -->
-    <logger name="com.enlink.sqlite.SQLiteMetadataBuilderInitializer" level="WARN" additivity="false">
+    <logger name="com.enlink.de.src.main.java.com.enlink.sqlite.SQLiteMetadataBuilderInitializer" level="WARN" additivity="false">
         <appender-ref ref="console"/>
         <appender-ref ref="file"/>
     </logger>

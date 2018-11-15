@@ -17,9 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
-    @Autowired
-    private HelloWorld helloWorld;
-
     @RequestMapping("oo")
     private AjaxResults Hello(){
         System.out.println("ssss");
