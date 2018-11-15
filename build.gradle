@@ -38,6 +38,7 @@ dependencies {
     compile "org.jetbrains.kotlinx:kotlinx-coroutines-core:0.16"
     compile "com.fasterxml.jackson.module:jackson-module-kotlin:$vJacksonKotlin"
     compile "org.springframework.boot:spring-boot-starter-web:$vSpringBoot"
+    compile "org.springframework.boot:spring-boot-starter-data-jpa:$vSpringBoot"
     compile "org.springframework.boot:spring-boot-devtools:$vSpringBoot"
     compile "org.springframework.boot:spring-boot-configuration-processor:$vSpringBoot"
     compile "org.springframework.boot:spring-boot-starter-actuator:$vSpringBoot"
@@ -54,6 +55,9 @@ dependencies {
     compile "com.google.guava:guava:25.1-jre"
     compile "com.alibaba:fastjson:1.2.47"
     compile "org.projectlombok:lombok:1.18.2"
+    compile "org.xerial:sqlite-jdbc:3.25.2"
+    compile group: 'com.bbossgroups.plugins', name: 'bboss-elasticsearch-spring-boot-starter', version: '5.1.9'
+
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.12'
     compile group: 'org.mybatis', name: 'mybatis', version: '3.2.1'
     compile group: 'org.mybatis', name: 'mybatis-spring', version: '1.3.2'

@@ -53,6 +53,39 @@ spring:
     testOnReturn: false
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
+##ES集群配置
+  elasticsearch:
+    bboss:
+      elasticUser: elastic
+      elasticPassword: changeme
+      elasticsearch:
+        rest:
+          hostNames: 192.168.174.123
+        dateFormate: yyyy.MM.dd
+        timeZone: Asia/Shanghai
+        ttl: 2d
+        showTemplate: true
+        discoverHost: false
+      dslfile:
+        refreshInterval: -1
+      http:
+        timeoutConntection: 400000
+        timeoutSocket: 400000
+        connectionRequestTimeout: 400000
+        retryTime: 1
+        maxLineLength: -1
+        maxHeaderCount: 200
+        maxTotal: 400
+        defaultMaxPerRoute: 200
+        soReuseAddress: false
+        soKeepAlive: false
+        timeToLive: 3600000
+        keepAlive: 3600000
+        keystore:
+        keyPassword:
+        hostnameVerifier:
+
+
 mybatis:
   mapper-locations : classpath:mapper/*.xml
   type-aliases-package: com.enlink.de.elasticsearch.entity
