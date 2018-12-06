@@ -63,7 +63,7 @@ public class ElasticQueryMethod {
     @Test
     public void test1() throws IOException {
 
-        String index = "res";//admin,res,user,sys
+        String index = "rally-races-2018-12";//admin,res,user,sys
         long start=System.currentTimeMillis();
         SearchRequest searchRequest = new SearchRequest(index);
         SearchSourceBuilder sourceBuilder = new SearchSourceBuilder();
@@ -259,7 +259,7 @@ public class ElasticQueryMethod {
     private RestHighLevelClient getElastic() {
         return new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost("192.168.63.179", 9200, "http")
+                        new HttpHost("192.168.100.50", 9200, "http")
                 )
         );
     }

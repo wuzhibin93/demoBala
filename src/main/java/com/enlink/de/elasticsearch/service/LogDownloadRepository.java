@@ -8,6 +8,6 @@ import com.enlink.de.elasticsearch.entity.LogDownload;
  *
  * @author changgq
  */
-public interface LogDownloadRepository extends GeneralRepository<LogDownload> {
+public interface LogDownloadRepository  {
 
 }

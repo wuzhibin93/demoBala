@@ -323,7 +323,7 @@ public class ElasticInsert{
     private RestHighLevelClient getElastic() {
         return new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost("192.168.63.179", 9200, "http")
+                        new HttpHost("192.168.100.50", 9200, "http")
                 )
         );
     }

@@ -37,7 +37,7 @@ spring:
     driver-class-name : com.mysql.cj.jdbc.Driver
     url: "jdbc:mysql://localhost:3306/enlink?characterEncoding=utf8"
     username: root
-    password: 123456
+    password: Wuzhibin
       # 使用druid数据源
     type: com.alibaba.druid.pool.DruidDataSource
     filters: stat

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 curl -H "Content-Type:application/json" -XPUT 'localhost:9200/_template/enlink?pretty=true' -d'
 {
-    "template" : "*",
+    "template" : "*-filebeat-*",
     "order" : "1",
     "aliases" : {
         "alias_1" : {}
@@ -15,28 +15,12 @@ curl -H "Content-Type:application/json" -XPUT 'localhost:9200/_template/enlink?p
         },
         "refresh_interval": "5s",
         "number_of_routing_shards": "30",
-        "number_of_shards": "1"
+        "number_of_shards": "5"
         }
     },
     "mappings" : {
 		"doc": {
             "dynamic_templates": [
-                {
-                    "traffic":{
-                        "match":"*_traffic",
-                        "mapping":{
-                            "type":"long"
-                        }
-                    }
-                },
-                {
-				    "to_long":{
-				        "match":"*_long",
-				        "mapping":{
-				            "type":"long"
-				        }
-				    }
-				},
                 {
                     "ip":{
                         "match":"*_ip",
@@ -46,19 +30,27 @@ curl -H "Content-Type:application/json" -XPUT 'localhost:9200/_template/enlink?p
                     }
                 },
                 {
-					"geo":{
-						"path_match":"geoip.location.*",
-						"mapping":{
-							"type": "float"
-						}
-					}
-				},
+                    "longitude":{
+                        "match":"longitude",
+                        "mapping":{
+                            "type":"float"
+                        }
+                    }
+                },
+                {
+                    "latitude":{
+                        "match":"latitude",
+                        "mapping":{
+                            "type":"float"
+                        }
+                    }
+                },
                 {
                     "time":{
                         "match":"*_timestamp",
                         "mapping":{
                             "type":"date",
-                            "format" : "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||dd/MMM/yyyy:HH:mm:ss Z||epoch_millis"
+							"format" : "strict_date_optional_time||yyyy-MM-dd HH:mm:ss||yyyy-MM-dd HH:mm:ss.SSS||dd/MMM/yyyy:HH:mm:ss Z||epoch_millis"
                         }
                     }
                 },

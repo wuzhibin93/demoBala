@@ -56,8 +56,6 @@ dependencies {
     compile "com.alibaba:fastjson:1.2.47"
     compile "org.projectlombok:lombok:1.18.2"
     compile "org.xerial:sqlite-jdbc:3.25.2"
-    compile group: 'com.bbossgroups.plugins', name: 'bboss-elasticsearch-spring-boot-starter', version: '5.1.9'
-
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.12'
     compile group: 'org.mybatis', name: 'mybatis', version: '3.2.1'
     compile group: 'org.mybatis', name: 'mybatis-spring', version: '1.3.2'
@@ -79,4 +77,13 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
-sourceCompatibility = "1.8"
+jar{
+    manifest{
+        attributes "Main-Class" : "com.enlink.de.Application"
+    }
+    from{
+        configurations.compile.collect{
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+}

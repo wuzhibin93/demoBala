@@ -2,6 +2,7 @@
   <library name="Gradle: io.dropwizard.metrics:metrics-core:4.0.2">
     <CLASSES>
       <root url="jar://$MAVEN_REPOSITORY$/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-core/4.0.2/ec9878842d510cabd6bd6a9da1bebae1ae0cd199/metrics-core-4.0.2.jar!/" />
+      <root url="jar://$MAVEN_REPOSITORY$/caches/modules-2/files-2.1/io.dropwizard.metrics/metrics-core/4.0.2/4d1da0c8ffc0c7c2e99b887d435e4c735253e4a5/metrics-core-4.0.2.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
