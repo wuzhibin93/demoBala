@@ -1,13 +1,10 @@
 package HotelCourseFileT;
 
-import com.enlink.de.Application;
-import com.enlink.de.elasticsearch.entity.HotelCourseFile;
-import com.enlink.de.elasticsearch.service.HotelCourseFileService;
+import com.enlink.Application;
+import com.enlink.elasticsearch.entity.HotelCourseFile;
+import com.enlink.elasticsearch.service.HotelCourseFileService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;

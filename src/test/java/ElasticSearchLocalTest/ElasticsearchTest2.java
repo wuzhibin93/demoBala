@@ -1,8 +1,8 @@
 package ElasticSearchLocalTest;
 
-import com.enlink.de.Application;
-import com.enlink.de.elasticsearch.dao.HotelCourseFileDao;
-import com.enlink.de.elasticsearch.entity.HotelCourseFile;
+import com.enlink.Application;
+import com.enlink.elasticsearch.dao.HotelCourseFileDao;
+import com.enlink.elasticsearch.entity.HotelCourseFile;
 import com.google.gson.Gson;
 import org.apache.http.HttpHost;
 import org.elasticsearch.action.index.IndexRequest;

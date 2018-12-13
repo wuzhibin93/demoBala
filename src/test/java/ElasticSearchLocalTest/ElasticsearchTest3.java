@@ -1,6 +1,6 @@
 package ElasticSearchLocalTest;
 
-import com.enlink.de.util.ESUtil;
+import com.enlink.util.ESUtil;
 import org.elasticsearch.action.ActionFuture;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchRequestBuilder;

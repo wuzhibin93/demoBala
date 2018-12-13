@@ -11,7 +11,9 @@ buildscript {
 
     repositories {
         maven { url "http://repo.spring.io/plugins-release/" }
+        mavenLocal()
         mavenCentral()
+
     }
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$vKotlin"
