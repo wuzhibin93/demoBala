@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.enlink.dao.OperationDAO">
+
+    <select id="findById" resultType="com.enlink.entity.Operation">
+        select * from operation
+        where id=#{id}
+
+    </select>
+
+    <insert id="insertOperation">
+        insert into operation(id,
+                              car,
+                              track,
+                              challenge,
+                              esVersion,
+                              pipeline,
+                              rally_version,
+                              isCluster,
+                              node_count,
+                              operation,
+                              error_rate,
+                              unit,
+                              min,
+                              median,
+                              max,
+                              flush_time,
+                              flush_time_shard,
+                              memory_doc_value,
+                              memory_norms,
+                              memory_segments,
+                              memory_stored_field,
+                              memory_terms,
+                              old_gc_time,
+                              young_gc_time,
+                              refresh_time,
+                              segment_count,
+                              total_time,
+                              total_time_per_shard,
+                              translog_size,
+                              merge_throttle_time,
+                              merge_throttle_time_per_shard_max,
+                              merge_time,
+                              merge_time_per_shard_max,
+                              trial_timestamp)
+        values (#{id},
+                #{car},
+                #{track},
+                #{challenge},
+                #{esVersion},
+                #{pipeline},
+                #{rally_version},
+                #{isCluster},
+                #{node_count},
+                #{operation},
+                #{error_rate},
+                #{unit},
+                #{min},
+                #{median},
+                #{max},
+                #{flush_time},
+                #{flush_time_shard},
+                #{memory_doc_value},
+                #{memory_norms},
+                #{memory_segments},
+                #{memory_stored_field},
+                #{memory_terms},
+                #{old_gc_time},
+                #{young_gc_time},
+                #{refresh_time},
+                #{segment_count},
+                #{total_time},
+                #{total_time_per_shard},
+                #{translog_size},
+                #{merge_throttle_time},
+                #{merge_throttle_time_per_shard_max},
+                #{merge_time},
+                #{merge_time_per_shard_max},
+                #{trial_timestamp})
+    </insert>
+
+</mapper>
