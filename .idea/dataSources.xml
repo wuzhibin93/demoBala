@@ -18,15 +18,6 @@
         </library>
       </libraries>
     </data-source>
-    <data-source source="LOCAL" name="db" uuid="0f3b3f80-d301-4dce-8f49-511a4d870f59">
-      <driver-ref>sqlite.xerial</driver-ref>
-      <synchronize>true</synchronize>
-      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
-      <jdbc-url>jdbc:sqlite:D:\IDEA_boot\demoBala\src\main\java\com\enlink\de\db</jdbc-url>
-      <driver-properties>
-        <property name="enable_load_extension" value="true" />
-      </driver-properties>
-    </data-source>
     <data-source source="LOCAL" name="enlink@localhost" uuid="470cae09-b0bc-46a5-8ecf-b364ec997d48">
       <driver-ref>mysql</driver-ref>
       <synchronize>true</synchronize>

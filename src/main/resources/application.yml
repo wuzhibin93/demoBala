@@ -88,4 +88,4 @@ spring:
 
 mybatis:
   mapper-locations : classpath:mapper/*.xml
-  type-aliases-package: com.enlink.de.elasticsearch.entity
+  type-aliases-package: com.enlink.elasticsearch.entity;com.enlink.entity

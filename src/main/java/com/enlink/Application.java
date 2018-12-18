@@ -18,7 +18,7 @@ import org.springframework.context.annotation.Bean;
  */
 
 @SpringBootApplication
-@MapperScan("com.enlink.de.elasticsearch.dao")
+@MapperScan("com.enlink.dao")
 public class Application {
 
     @Autowired
