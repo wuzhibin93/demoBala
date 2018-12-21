@@ -5,6 +5,7 @@ import com.enlink.Application;
 import com.enlink.dao.OperationDAO;
 import com.enlink.entity.Operation;
 import com.enlink.entity.Throughput;
+import org.apache.logging.log4j.util.Strings;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -43,7 +44,7 @@ public class Test_2 {
         Operation operation = new Operation("1","1","1","1","1","1","1","1",
                 "1","1","1","1","1","1","1",
                 "1","1","1","1","1","1","1","1",
-                "1","1","1","1","1","1","1",
+                "1","1","1","1","1","1","1","1",
                 "1","1","1",new Timestamp(123456),new Throughput());
 
         operationDAO.insertOperation(operation);
@@ -69,7 +70,21 @@ public class Test_2 {
         String s = stringBuilder.toString();
         System.out.println(s);
 
+    }
+    @Test
+    public void test5(){
+        operationDAO.deleteFromOpertaion();
+    }
 
+
+    @Test
+    public void test6(){
+        String time = "20181203T133303Z";
+        String nu = "";
+        boolean blank = Strings.isBlank(time);
+        boolean blank1 = Strings.isBlank(nu);
+        System.out.println(blank);
+        System.out.println(blank1);
 
     }
 }

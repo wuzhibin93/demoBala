@@ -42,6 +42,7 @@ public class Operation {
     private String total_time;              //测试所花总时间
     private String total_time_per_shard;    //每个分片测试总时间
     private String translog_size;           //translog大小
+    private String user_tags;               //标签
     private String merge_throttle_time;
     private String merge_throttle_time_per_shard_max;
     private String merge_time;
@@ -50,16 +51,7 @@ public class Operation {
     private Timestamp trial_timestamp;      //测试时间
     private Throughput throughput;
 
-    public Operation(String id, String car, String track, String challenge, String esVersion,
-                     String pipeline, String rally_version, String isCluster, String node_count,
-                     String operation, String error_rate, String unit, String min, String median,
-                     String max, String flush_time, String flush_time_shard, String memory_doc_value,
-                     String memory_norms, String memory_segments, String memory_stored_field, String memory_terms,
-                     String old_gc_time, String young_gc_time, String refresh_time, String segment_count,
-                     String total_time, String total_time_per_shard, String translog_size,
-                     String merge_throttle_time, String merge_throttle_time_per_shard_max,
-                     String merge_time, String merge_time_per_shard_max, Timestamp trial_timestamp,
-                     Throughput throughput) {
+    public Operation(String id, String car, String track, String challenge, String esVersion, String pipeline, String rally_version, String isCluster, String node_count, String operation, String error_rate, String unit, String min, String median, String max, String flush_time, String flush_time_shard, String memory_doc_value, String memory_norms, String memory_segments, String memory_stored_field, String memory_terms, String old_gc_time, String young_gc_time, String refresh_time, String segment_count, String total_time, String total_time_per_shard, String translog_size, String user_tags, String merge_throttle_time, String merge_throttle_time_per_shard_max, String merge_time, String merge_time_per_shard_max, Timestamp trial_timestamp, Throughput throughput) {
         this.id = id;
         this.car = car;
         this.track = track;
@@ -89,6 +81,7 @@ public class Operation {
         this.total_time = total_time;
         this.total_time_per_shard = total_time_per_shard;
         this.translog_size = translog_size;
+        this.user_tags = user_tags;
         this.merge_throttle_time = merge_throttle_time;
         this.merge_throttle_time_per_shard_max = merge_throttle_time_per_shard_max;
         this.merge_time = merge_time;

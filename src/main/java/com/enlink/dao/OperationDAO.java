@@ -23,5 +23,5 @@ public interface OperationDAO {
      * @param operation
      */
     void insertOperation(Operation operation);
-
+    void deleteFromOpertaion();
 }

@@ -9,6 +9,9 @@
 
     </select>
 
+    <delete id = "deleteFromOperation">
+        delete * from operation
+    </delete>
     <insert id="insertOperation">
         insert into operation(id,
                               car,
@@ -39,6 +42,7 @@
                               total_time,
                               total_time_per_shard,
                               translog_size,
+                              user_tags,
                               merge_throttle_time,
                               merge_throttle_time_per_shard_max,
                               merge_time,
@@ -73,11 +77,11 @@
                 #{total_time},
                 #{total_time_per_shard},
                 #{translog_size},
+                #{user_tags},
                 #{merge_throttle_time},
                 #{merge_throttle_time_per_shard_max},
                 #{merge_time},
                 #{merge_time_per_shard_max},
                 #{trial_timestamp})
     </insert>
-
 </mapper>

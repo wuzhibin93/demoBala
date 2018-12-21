@@ -113,6 +113,7 @@ public class Test_1 {
         //修改得到的字符串，使得更容易操作
         String agg2 = agg1.toString().substring(67);
         String substring = agg2.substring(0, agg2.length() - 2);
+        System.out.println("substring------"+substring);
         //转化取得的json获得每个ID
         JSONObject parse = JSON.parseObject("{" + substring + "}");
         JSONArray json_id = parse.getJSONArray("buckets");
@@ -133,6 +134,8 @@ public class Test_1 {
             JSONObject cluster = jsonObject.getJSONObject("_source").getJSONObject("cluster");
             //取出results中对应信息
             JSONObject results = jsonObject.getJSONObject("_source").getJSONObject("results");
+            //取出标签
+            JSONObject user_tags = jsonObject.getJSONObject("_source").getJSONObject("user-tags");
             //取出flush_time_per_shard中的信息
             JSONObject flush_time_per_shard = jsonObject.getJSONObject("_source").getJSONObject("results").getJSONObject("flush_time_per_shard");
             //取出merge_throttle_time_per_shard
@@ -146,20 +149,19 @@ public class Test_1 {
                 Object o = op_metrics.get(i);
                 Operation operation = JSON.parseObject(o.toString(), new TypeReference<Operation>() {
                 });
-                if (operation.getOperation().equals("index-append")) {
+                if (operation.getOperation().equals("index-append") || operation.getOperation().equals("index")) {
                     operation.setId(key.getKey());
                     operation.setUnit(operation.getThroughput().getUnit());
                     operation.setMax(operation.getThroughput().getMax());
                     operation.setMedian(operation.getThroughput().getMedian());
                     operation.setMin(operation.getThroughput().getMin());
-                    operation.setCar(source.get("car").toString());
                     operation.setTrack(source.get("track").toString());
                     operation.setChallenge(source.get("challenge").toString());
                     operation.setEsVersion(cluster.get("distribution-version").toString());
                     operation.setPipeline(source.get("pipeline").toString());
                     operation.setRally_version(source.get("rally-version").toString());
                     operation.setNode_count(cluster.get("node-count").toString());
-                    if (cluster.get("node-count").toString().equals("0")){
+                    if (cluster.get("node-count").toString().equals("1")){
                         operation.setIsCluster("false");
                     }else {
                         operation.setIsCluster("true");
@@ -174,14 +176,33 @@ public class Test_1 {
                     operation.setOld_gc_time(results.get("old_gc_time").toString());
                     operation.setYoung_gc_time(results.get("young_gc_time").toString());
                     operation.setTranslog_size(results.get("translog_size").toString());
-                    operation.setMerge_throttle_time(results.get("merge_throttle_time").toString());
+                    if(null == results.get("merge_throttle_time")){
+                        operation.setMerge_throttle_time(null);
+                    }else{
+                        operation.setMerge_throttle_time(results.get("merge_throttle_time").toString());
+                    }
                     operation.setTotal_time(results.get("total_time").toString());
                     operation.setMemory_terms(results.get("memory_terms").toString());
                     operation.setMemory_stored_field(results.get("memory_stored_fields").toString());
                     operation.setFlush_time_shard(flush_time_per_shard.get("max").toString());
-                    operation.setMerge_throttle_time_per_shard_max(merge_throttle_time_per_shard.get("max").toString());
+                    if (null == merge_throttle_time_per_shard.get("max")){
+                        operation.setMerge_throttle_time_per_shard_max(null);
+                    }else {
+                        operation.setMerge_throttle_time_per_shard_max(merge_throttle_time_per_shard.get("max").toString());
+                    }
                     operation.setTotal_time_per_shard(total_time_per_shard.get("max").toString());
                     operation.setTrial_timestamp(change(source.get("trial-timestamp").toString()));
+                    //下面是标签中的内容
+                    if (null == user_tags.get("data")){
+                        operation.setUser_tags(null);
+                    }else {
+                        operation.setUser_tags("data:"+user_tags.get("data").toString());
+                    }
+                    if(null == user_tags.get("car")){
+                        operation.setCar(null);
+                    }else {
+                        operation.setCar(user_tags.get("car").toString());
+                    }
                     System.out.println("o------" + operation);
                     operationDAO.insertOperation(operation);
                 }
@@ -189,6 +210,39 @@ public class Test_1 {
         }
     }
 
+    @Test
+    public void test4() throws IOException {
+        //获取ID总数
+        SearchRequest searchRequest = new SearchRequest(index);
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        searchSourceBuilder.query(QueryBuilders.matchAllQuery());
+        searchRequest.source(searchSourceBuilder);
+        SearchResponse search = client().search(searchRequest);
+
+        //使用聚合查询，获取ID的集合
+        SearchResponse response = Tclient()
+                .prepareSearch(index)
+                .setQuery(QueryBuilders.matchAllQuery())
+                .addAggregation(
+                        AggregationBuilders.terms("result").field("_id").size((int) search.getHits().totalHits)
+                )
+                .get();
+        Terms agg1 = response.getAggregations().get("result");
+        System.out.println("agg1------"+agg1);
+        //修改得到的字符串，使得更容易操作
+        String agg2 = agg1.toString().substring(67);
+        String substring = agg2.substring(0, agg2.length() - 2);
+        System.out.println("substring------"+substring);
+        //转化取得的json获得每个ID
+        JSONObject parse = JSON.parseObject("{" + substring + "}");
+        JSONArray json_id = parse.getJSONArray("buckets");
+        List<Key> keys = JSON.parseObject(json_id.toJSONString(), new TypeReference<List<Key>>() {
+        });
+        System.out.println(keys.size());
+        for (Key key: keys) {
+            System.out.println(key);
+        }
+    }
     private static java.sql.Timestamp change(String time) throws ParseException {
         StringBuilder stringBuilder = new StringBuilder(time);
         stringBuilder.insert(4,"-");
