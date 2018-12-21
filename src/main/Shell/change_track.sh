@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-#!/bin/bash
+
 #Each time the data source changes, the corresponding track.json also changes
 echo "Add data with /usr/local/foresrally.py"
 python /usr/local/foresrally.py
