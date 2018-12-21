@@ -1,6 +1,9 @@
 package MixT;
 
+import com.enlink.elasticsearch.entity.User;
 import org.apache.http.HttpHost;
+import org.assertj.core.util.Lists;
+import org.assertj.core.util.Maps;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RestClient;
@@ -11,6 +14,7 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 
 /**
  * @ClassName :
@@ -53,6 +57,19 @@ public class MixTest {
         }
         client.close();
     }
+
+    @Test
+    public void Tst4(){
+        ArrayList<Object> list = Lists.newArrayList();
+        list.add(new User());
+        for (Object o : list) {
+            System.out.println(o);
+        }
+
+    }
+
+
+
     //获取客户端
     private RestHighLevelClient getElastic() {
         return new RestHighLevelClient(
