@@ -2,7 +2,6 @@ package com.enlink.elasticsearch.controller;
 
 import com.enlink.config.ElasticsearchConfig;
 import com.enlink.elasticsearch.entity.Ids;
-import com.enlink.elasticsearch.entity.User;
 import com.enlink.response.AjaxResults;
 import com.enlink.response.ResultCode;
 import com.enlink.response.Results;
@@ -27,15 +26,15 @@ public class UserController {
     @Autowired
     private ElasticsearchConfig esConfig;
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST, consumes = {"application/json"})
-    public AjaxResults add(@RequestBody User users) throws IllegalAccessException {
-        if (null == users) {
-            return Results.errorOf(ResultCode.THE_REQUIRED_PARAMETERS_ARE_MISSING, "");
-        }
-
-
-        return Results.resultOf(ResultCode.OK, "");
-    }
+//    @RequestMapping(value = "/add",method = RequestMethod.POST, consumes = {"application/json"})
+//    public AjaxResults add(@RequestBody User users) throws IllegalAccessException {
+//        if (null == users) {
+//            return Results.errorOf(ResultCode.THE_REQUIRED_PARAMETERS_ARE_MISSING, "");
+//        }
+//
+//
+//        return Results.resultOf(ResultCode.OK, "");
+//    }
 
     @RequestMapping(value = "/delete",method = RequestMethod.POST, consumes = {"application/json"})
     public AjaxResults delete(@RequestBody Ids ids){

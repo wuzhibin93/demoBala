@@ -28,6 +28,11 @@
                               min,
                               median,
                               max,
+                              search,
+                              search_min,
+                              search_median,
+                              search_max,
+                              search_unit,
                               flush_time,
                               flush_time_shard,
                               memory_doc_value,
@@ -45,8 +50,6 @@
                               user_tags,
                               merge_throttle_time,
                               merge_throttle_time_per_shard_max,
-                              merge_time,
-                              merge_time_per_shard_max,
                               trial_timestamp)
         values (#{id},
                 #{car},
@@ -63,6 +66,11 @@
                 #{min},
                 #{median},
                 #{max},
+                #{search},
+                #{search_min},
+                #{search_median},
+                #{search_max},
+                #{search_unit},
                 #{flush_time},
                 #{flush_time_shard},
                 #{memory_doc_value},
@@ -80,8 +88,15 @@
                 #{user_tags},
                 #{merge_throttle_time},
                 #{merge_throttle_time_per_shard_max},
-                #{merge_time},
-                #{merge_time_per_shard_max},
                 #{trial_timestamp})
     </insert>
+    <update id="updateOperation">
+        update operation
+        set   search=#{search},
+              search_min=#{search_min},
+              search_median=#{search_median},
+              search_max=#{search_max},
+              search_unit=#{search_unit}
+        where id=#{id}
+    </update>
 </mapper>

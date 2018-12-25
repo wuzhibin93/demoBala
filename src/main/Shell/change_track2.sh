@@ -24,11 +24,9 @@ echo "Run esrally with the track.json has changed"
 #esrally race --pipeline=benchmark-only --target-hosts=localhost:9200 --track-path=/usr/local/esrally/benchmarks/tracks/enadmin/ --car="2gheap"  --user-tag="data:200000,car:2gheap"
 for i in 1 2 4 8 16 32; do
 	echo ${i}
-        for l in 0 1 2 3 4 5 6 7 8 9; do
-        echo "Start ${document_count}数据量,${i}gheap的第${l} 次esrally at :"`date +"%Y-%m-%d %H:%M:%S"` >> /usr/local/esrally.log
-		#esrally race --pipeline=benchmark-only --target-hosts=localhost:9200 --track-path=/usr/local/esrally/benchmarks/tracks/enadmin/ --car="${i}gheap"  --user-tag="data:${document_count},car:${i}gheap"
-		echo "End  ${document_count}数据量,${i}gheap的第${l} 次esrally at:"`date +"%Y-%m-%d %H:%M:%S"` >> /usr/local/esrally.log
-	done
+    echo "Start ${document_count}数据量,${i}gheap的第${l} 次esrally at :"`date +"%Y-%m-%d %H:%M:%S"` >> /usr/local/esrally.log
+	#esrally race --pipeline=benchmark-only --target-hosts=localhost:9200 --track-path=/usr/local/esrally/benchmarks/tracks/enadmin/ --car="${i}gheap"  --user-tag="data:${document_count},car:${i}gheap"
+	echo "End  ${document_count}数据量,${i}gheap的第${l} 次esrally at:"`date +"%Y-%m-%d %H:%M:%S"` >> /usr/local/esrally.log
 done
 
 

@@ -2,7 +2,9 @@ package ES_MySql;
 
 
 import com.enlink.Application;
+import com.enlink.dao.KeyDAO;
 import com.enlink.dao.OperationDAO;
+import com.enlink.entity.Key;
 import com.enlink.entity.Operation;
 import com.enlink.entity.Throughput;
 import org.apache.logging.log4j.util.Strings;
@@ -33,6 +35,8 @@ public class Test_2 {
 
     @Resource
     private OperationDAO operationDAO;
+    @Resource
+    private KeyDAO keyDAO;
     @Test
     public void test1(){
         List<Operation> byId = operationDAO.findById("1");
@@ -87,4 +91,10 @@ public class Test_2 {
         System.out.println(blank1);
 
     }
+    @Test
+    public void test7(){
+        Key key = new Key("123456");
+        keyDAO.insertKey(key);
+    }
+
 }

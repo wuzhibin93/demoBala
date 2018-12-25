@@ -1,5 +1,7 @@
 package com.enlink.controller;
 
+import com.enlink.entity.Key;
+import com.enlink.response.AjaxResult;
 import com.enlink.response.AjaxResults;
 import com.enlink.response.ResultCode;
 import com.enlink.response.Results;
@@ -19,5 +21,11 @@ public class HelloController {
     private AjaxResults Hello(){
         System.out.println("ssss");
         return Results.resultOf(ResultCode.OK, "ok");
+    }
+
+    @RequestMapping("add")
+    public AjaxResult add(Key key){
+
+        return AjaxResult.ok(key);
     }
 }

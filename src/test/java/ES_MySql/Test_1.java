@@ -123,7 +123,7 @@ public class Test_1 {
         for (Key key : keys) {
             System.out.println(key);
             //使用每个ID查出每个索引中的需要的数据
-            GetRequestBuilder getRequestBuilder = Tclient().prepareGet(index, type, key.getKey());
+            GetRequestBuilder getRequestBuilder = Tclient().prepareGet(index, type, key.getKey_id());
             GetResponse documentFields = getRequestBuilder.get();
             //原始数据转JSON
             JSONObject jsonObject = JSON.parseObject(documentFields.toString());
@@ -150,7 +150,7 @@ public class Test_1 {
                 Operation operation = JSON.parseObject(o.toString(), new TypeReference<Operation>() {
                 });
                 if (operation.getOperation().equals("index-append") || operation.getOperation().equals("index")) {
-                    operation.setId(key.getKey());
+                    operation.setId(key.getKey_id());
                     operation.setUnit(operation.getThroughput().getUnit());
                     operation.setMax(operation.getThroughput().getMax());
                     operation.setMedian(operation.getThroughput().getMedian());
@@ -166,7 +166,11 @@ public class Test_1 {
                     }else {
                         operation.setIsCluster("true");
                     }
-                    operation.setFlush_time(results.get("flush_time").toString());
+                    if (null == results.get("flush_time")){
+                        operation.setFlush_time(null);
+                    }else {
+                        operation.setFlush_time(results.get("flush_time").toString());
+                    }
                     operation.setRefresh_time(results.get("refresh_time").toString());
                     operation.setMemory_norms(results.get("memory_norms").toString());
                     operation.setSegment_count(results.get("segment_count").toString());
@@ -184,7 +188,11 @@ public class Test_1 {
                     operation.setTotal_time(results.get("total_time").toString());
                     operation.setMemory_terms(results.get("memory_terms").toString());
                     operation.setMemory_stored_field(results.get("memory_stored_fields").toString());
-                    operation.setFlush_time_shard(flush_time_per_shard.get("max").toString());
+                    if (null == flush_time_per_shard.get("max")){
+                        operation.setFlush_time_shard(null);
+                    }else {
+                        operation.setFlush_time_shard(flush_time_per_shard.get("max").toString());
+                    }
                     if (null == merge_throttle_time_per_shard.get("max")){
                         operation.setMerge_throttle_time_per_shard_max(null);
                     }else {
@@ -205,6 +213,16 @@ public class Test_1 {
                     }
                     System.out.println("o------" + operation);
                     operationDAO.insertOperation(operation);
+                }
+                if (operation.getOperation().equals("default") || operation.getOperation().equals("search")){
+                    operation.setId(key.getKey_id());
+                    operation.setSearch("default_search");
+                    operation.setSearch_min(operation.getThroughput().getMin());
+                    operation.setSearch_median(operation.getThroughput().getMedian());
+                    operation.setSearch_max(operation.getThroughput().getMax());
+                    operation.setSearch_unit(operation.getThroughput().getUnit());
+                    System.out.println(op_metrics.get(i));
+                    operationDAO.updateOperation(operation);
                 }
             }
         }

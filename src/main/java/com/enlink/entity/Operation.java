@@ -22,12 +22,20 @@ public class Operation {
     private String rally_version;           //esrally版本
     private String isCluster;               //是否是集群。用0和1表示，0表示不是集群(单节点)，1表示集群
     private String node_count;              //几个节点
-    private String operation;               //测试类型
+
+    private String operation;               //index-append标签
     private String error_rate;              //错误率
     private String unit;                    //单位
     private String min;                     //最小
     private String median;                  //中等
     private String max;                     //最大
+
+    private String search;                  //查询标签
+    private String search_min;              //查询单位
+    private String search_median;
+    private String search_max;
+    private String search_unit;             //单位
+
     private String flush_time;              //刷新时间
     private String flush_time_shard;        //分片刷新时间
     private String memory_doc_value;        //文档所占内存
@@ -45,8 +53,9 @@ public class Operation {
     private String user_tags;               //标签
     private String merge_throttle_time;
     private String merge_throttle_time_per_shard_max;
-    private String merge_time;
-    private String merge_time_per_shard_max;
+//    private String merge_time;
+//    private String merge_time_per_shard_max;
+
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Timestamp trial_timestamp;      //测试时间
     private Throughput throughput;
@@ -84,8 +93,8 @@ public class Operation {
         this.user_tags = user_tags;
         this.merge_throttle_time = merge_throttle_time;
         this.merge_throttle_time_per_shard_max = merge_throttle_time_per_shard_max;
-        this.merge_time = merge_time;
-        this.merge_time_per_shard_max = merge_time_per_shard_max;
+//        this.merge_time = merge_time;
+//        this.merge_time_per_shard_max = merge_time_per_shard_max;
         this.trial_timestamp = trial_timestamp;
         this.throughput = throughput;
     }

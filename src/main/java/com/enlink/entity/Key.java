@@ -10,5 +10,9 @@ import lombok.Data;
  */
 @Data
 public class Key {
-    private String key;
+    private String key_id;
+
+    public Key(String key_id) {
+        this.key_id = key_id;
+    }
 }
