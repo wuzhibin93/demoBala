@@ -10,4 +10,5 @@ import com.enlink.entity.Key;
  */
 public interface KeyService {
     void insertKey(Key key);
+
 }

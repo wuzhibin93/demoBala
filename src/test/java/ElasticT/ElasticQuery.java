@@ -61,7 +61,7 @@ public class ElasticQuery {
         //sourceBuilder.query(QueryBuilders.matchAllQuery());                                                   //匹配该索引中所有数据
         //sourceBuilder.query(QueryBuilders.matchQuery("create_by","aprwu"));                                   //单个匹配,需要完全相同
         //sourceBuilder.query(QueryBuilders.boolQuery().must(QueryBuilders.wildcardQuery("file_name","*陌生*")));
-
+        QueryBuilders.boolQuery();
         //sourceBuilder.timeout(new TimeValue(60, TimeUnit.SECONDS));//设置超时时间，该超时不是指的到时间停止搜索，而是指的是展示该时间之前的数据，后面有数据还是会在搜索
         //sourceBuilder.size(300);       //设置展示几条信息
         searchRequest.source(sourceBuilder);
