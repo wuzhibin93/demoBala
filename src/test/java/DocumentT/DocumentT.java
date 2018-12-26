@@ -54,7 +54,7 @@ public class DocumentT {
 
         searchSourceBuilder.query(QueryBuilders.boolQuery()
                 //.must(QueryBuilders.matchAllQuery())
-                .must(QueryBuilders.termQuery("price",20000))
+                .must(QueryBuilders.termQuery("price",2000))
                 .mustNot(QueryBuilders.termQuery("make","ford")));
 
         searchRequest.source(searchSourceBuilder);
@@ -74,6 +74,7 @@ public class DocumentT {
 
     }
 
+    //关闭source
     @Test
     public void test5() throws IOException {
         SearchRequest searchRequest = new SearchRequest("car");
@@ -84,6 +85,7 @@ public class DocumentT {
         System.out.println(search);
     }
 
+    //高亮
     @Test
     public void test6() throws IOException {
         SearchRequest searchRequest = new SearchRequest("car");
