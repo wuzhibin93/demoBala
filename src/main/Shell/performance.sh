@@ -18,5 +18,5 @@ echo "curl -XGET http://100.10.11.130:9200/shx_info_index/shx_info_type/_search 
 }' >> ./rst.txt 2>&1 & " >> ./sql.txt
 
 icnt=$((icnt+1));
-echo "icnt ="$icnt;
+echo "icnt ="${icnt};
 done;

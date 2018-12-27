@@ -102,6 +102,17 @@ public class DocumentT {
         System.out.println(search);
     }
 
+    @Test
+    public void test7() throws IOException {
+        SearchRequest searchRequest = new SearchRequest("car");
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+        SearchSourceBuilder query = searchSourceBuilder.query(QueryBuilders.matchAllQuery());
+        SearchRequest source = searchRequest.source(query);
+        SearchResponse search = client().search(source);
+        
+        System.out.println(search);
+
+    }
 
     public RestHighLevelClient client(){
         RestHighLevelClient client = new RestHighLevelClient(
