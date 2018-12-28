@@ -17,7 +17,7 @@ import java.io.IOException;
 /**
  * @ClassName :
  * @Author Aprwu
- * @Description : TODO(类的作用)
+ * @Description : TODO(对老索引进行查分，以时间命名新索引)
  * @Date : Created in 16:25 2018/12/28
  */
 public class Index_newIndex {
