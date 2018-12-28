@@ -123,7 +123,7 @@ public class Test_1 {
         for (Key key : keys) {
             System.out.println(key);
             //使用每个ID查出每个索引中的需要的数据
-            GetRequestBuilder getRequestBuilder = Tclient().prepareGet(index, type, key.getKey_id());
+            GetRequestBuilder getRequestBuilder = Tclient().prepareGet(index, type, key.getKey());
             GetResponse documentFields = getRequestBuilder.get();
             //原始数据转JSON
             JSONObject jsonObject = JSON.parseObject(documentFields.toString());
@@ -150,7 +150,7 @@ public class Test_1 {
                 Operation operation = JSON.parseObject(o.toString(), new TypeReference<Operation>() {
                 });
                 if (operation.getOperation().equals("index-append") || operation.getOperation().equals("index")) {
-                    operation.setId(key.getKey_id());
+                    operation.setId(key.getKey());
                     operation.setUnit(operation.getThroughput().getUnit());
                     operation.setMax(operation.getThroughput().getMax());
                     operation.setMedian(operation.getThroughput().getMedian());
@@ -215,7 +215,7 @@ public class Test_1 {
                     operationDAO.insertOperation(operation);
                 }
                 if (operation.getOperation().equals("default") || operation.getOperation().equals("search")){
-                    operation.setId(key.getKey_id());
+                    operation.setId(key.getKey());
                     operation.setSearch("default_search");
                     operation.setSearch_min(operation.getThroughput().getMin());
                     operation.setSearch_median(operation.getThroughput().getMedian());
@@ -257,8 +257,8 @@ public class Test_1 {
         List<Key> keys = JSON.parseObject(json_id.toJSONString(), new TypeReference<List<Key>>() {
         });
         System.out.println(keys.size());
-        for (Key key: keys) {
-            System.out.println(key);
+        for (Key key_id: keys) {
+            System.out.println(key_id);
         }
     }
     private static java.sql.Timestamp change(String time) throws ParseException {
@@ -295,8 +295,8 @@ public class Test_1 {
      */
     private static TransportClient Tclient() throws UnknownHostException {
         Settings settings = Settings.builder()
-                .put("client.transport.sniff", true)
-                .put("cluster.name", "elasticsearch")
+                .put("client.transport.sniff", false)
+                .put("cluster.name", "enlink")
                 .build();
         return new PreBuiltTransportClient(settings)
                 .addTransportAddress(new TransportAddress(InetAddress.getByName("192.168.100.51"), 9300));
