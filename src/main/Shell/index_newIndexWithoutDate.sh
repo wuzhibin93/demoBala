@@ -3,16 +3,18 @@
 #index="twitter"
 #start_time="20181227"
 #end_time="20181229"
-# 使用方式 ./index_newIndex.sh index startTime endTime
-# eg: ./index_newIndex.sh twitter 20180202 20181231
+# 使用方式 ./index_newIndexWithoutDate.sh index startTime endTime
+# eg: ./index_newIndexWithoutDate.sh twitter 20180202 20181231
 # 循环遍历时间
 index=$1
-start_time=$2
-end_time=$3
+time_style=$2
+start_time=$3
+end_time=$4
 while [ "${start_time}" -le "${end_time}" ]
 do
+    # reindex用的时间格式
 	stat_date=`date -d "${start_time}" +%Y-%m-%d`
-	index_new=${index%-*}
+	# 命名索引用的时间格式
 	index_time=`date -d "${start_time}" +%Y.%m.%d`
 	stat_date_num=`date -d "${start_time}" +%Y%m%d`
 	echo "stat_date---------"${stat_date}
@@ -23,14 +25,14 @@ do
         "index": "'${1}'",
         "query": {
           "range": {
-            "@timestamp": {
+            "'${time_style}'": {
               "gte": "'${stat_date}'",
               "lte": "'${stat_date}'"
             }
           }
         }
       },
-      "dest":
+      "dest":{
         "index": "'${index}'-'${index_time}'"
       }
     }

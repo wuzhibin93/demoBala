@@ -60,7 +60,7 @@ public class Test_1 {
 
     @Before
     public void param() {
-        index = "rally-races-2018-12";
+        index = "rally-races-2019-01";
         type = "races";
     }
 

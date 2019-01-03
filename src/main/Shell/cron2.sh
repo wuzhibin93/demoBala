@@ -5,5 +5,26 @@
 
 index=twitter-2018.02.21
 echo ${index%-*}
+curl -H "Content-Type:application/json" -XPOST '192.168.100.51:9200/_reindex?pretty=true' -d'
+        {
+        "source": {
+            "index": "'${index%-*}'"
+            },
+        "dest": {
+            "index": "'${index}'-backup"
+            }
+        }
+        '
+#curl -X POST "192.168.100.51:9200/_reindex?pretty=true" -H 'Content-Type: application/json' -d'
+#{
+#  "source": {
+#    "index": "'${index%-*}'"
+#  },
+#  "dest": {
+#    "index": "'${index%-*}'-backup"
+#  }
+#}
+#'
 
-echo "------------------------"
+
+echo "-----------ss-------------"
