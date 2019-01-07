@@ -282,7 +282,7 @@ public class Test_1 {
     private static RestHighLevelClient client() {
         return new RestHighLevelClient(
                 RestClient.builder(
-                        new HttpHost("192.168.100.51", 9200, "http")
+                        new HttpHost("192.168.226.133", 9200, "http")
                 )
         );
     }
@@ -296,9 +296,9 @@ public class Test_1 {
     private static TransportClient Tclient() throws UnknownHostException {
         Settings settings = Settings.builder()
                 .put("client.transport.sniff", false)
-                .put("cluster.name", "enlink")
+                .put("cluster.name", "elasticsearch")
                 .build();
         return new PreBuiltTransportClient(settings)
-                .addTransportAddress(new TransportAddress(InetAddress.getByName("192.168.100.51"), 9300));
+                .addTransportAddress(new TransportAddress(InetAddress.getByName("192.168.226.133"), 9300));
     }
 }

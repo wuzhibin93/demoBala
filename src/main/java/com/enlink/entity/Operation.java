@@ -46,7 +46,7 @@ public class Operation {
     private String old_gc_time;             //老年代GC时间
     private String young_gc_time;           //新生代GC时间
     private String refresh_time;            //刷新时间
-    private String segment_count;           //合并数
+    private String segment_count;           //段合并数
     private String total_time;              //测试所花总时间
     private String total_time_per_shard;    //每个分片测试总时间
     private String translog_size;           //translog大小

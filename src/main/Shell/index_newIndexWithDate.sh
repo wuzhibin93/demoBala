@@ -4,8 +4,8 @@
 #time_style="@timestamp"
 #start_time="20181227"
 #end_time="20181229"
-# 使用方式 ./index_newIndexWithDate.sh index startTime endTime
-# eg: ./index_newIndexWithDate.sh twitter 20180202 20181231
+# 使用方式 ./index_newIndexWithDate.sh index @timestamp startTime endTime
+# eg: ./index_newIndexWithDate.sh twitter @timestamp 20160101 20181231
 # 循环遍历时间
 index=$1
 time_style=$2
@@ -14,6 +14,7 @@ end_time=$4
 witch_time=""
 ip_port="192.168.100.51:9200"
 # 先做备份
+
 curl -H "Content-Type:application/json" -XPOST ''${ip_port}'/_reindex?pretty=true' -d'
     {
         "source": {
