@@ -3,8 +3,8 @@
 #index="twitter"
 #start_time="20181227"
 #end_time="20181229"
-# 使用方式 ./index_newIndexWithoutDate.sh index startTime endTime
-# eg: ./index_newIndexWithoutDate.sh twitter 20180202 20181231
+# 使用方式 ./index_newIndexWithoutDate.sh index timestyle startTime endTime
+# eg: ./index_newIndexWithoutDate.sh twitter timestyle 20180202 20181231
 # 循环遍历时间
 index=$1
 time_style=$2

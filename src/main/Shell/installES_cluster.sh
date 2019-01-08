@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# 使用方式：./installES_cluster.sh enlink 192.168.100.48:9200 192.168.100.49:9200 19.168.100.50:9200 192.168.100.51:9200
 # Install JDK
 echo 'install jdk start ......'
 rpm -i jdk-8u172-linux-x64.rpm
