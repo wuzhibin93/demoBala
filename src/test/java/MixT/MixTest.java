@@ -1,5 +1,6 @@
 package MixT;
 
+import com.enlink.config.ElasticsearchConfig;
 import org.apache.http.HttpHost;
 import org.assertj.core.util.Lists;
 import org.elasticsearch.action.search.SearchRequest;
@@ -60,7 +61,9 @@ public class MixTest {
 
     @Test
     public void test5(){
-
+        ElasticsearchConfig elasticsearchConfig = new ElasticsearchConfig();
+        String hosts = elasticsearchConfig.getHosts();
+        System.out.println(hosts);
     }
 
     //获取客户端
