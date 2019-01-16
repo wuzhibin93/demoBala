@@ -6,6 +6,7 @@ package com.enlink.j8.INTERFACE;
  * @Description : TODO(类的作用)
  * @Date : Created in 9:22 2019/1/16
  */
+@FunctionalInterface
 public interface Formula {
     //计算
     double calculate(int a);

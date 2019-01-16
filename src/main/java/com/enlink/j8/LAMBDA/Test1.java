@@ -12,7 +12,7 @@ import static sun.audio.AudioPlayer.player;
 /**
  * @ClassName :
  * @Author Aprwu
- * @Description : TODO(类的作用)
+ * @Description : TODO(lambda表达式)
  * @Date : Created in 9:39 2019/1/16
  */
 public class Test1 {
@@ -96,7 +96,6 @@ public class Test1 {
         for (String s : player) {
             System.out.println(s+"5");
         }
-
     }
 }
 
