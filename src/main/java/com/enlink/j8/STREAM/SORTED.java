@@ -24,7 +24,7 @@ public class SORTED {
         stringCollection
                 .stream()
                 .sorted()
-                .filter(s -> s.startsWith("a"))
+                //.filter(s -> s.startsWith("a"))
                 .forEach(System.out::println);
     }
 }

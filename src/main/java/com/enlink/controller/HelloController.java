@@ -25,7 +25,6 @@ public class HelloController {
 
     @RequestMapping("add")
     public AjaxResult add(Key key){
-
         return AjaxResult.ok(key);
     }
 }

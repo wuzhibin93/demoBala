@@ -59,12 +59,12 @@ public class MixTest {
 
 
 
-    @Test
-    public void test5(){
-        ElasticsearchConfig elasticsearchConfig = new ElasticsearchConfig();
-        String hosts = elasticsearchConfig.getHosts();
-        System.out.println(hosts);
-    }
+//    @Test
+//    public void test5(){
+//        ElasticsearchConfig elasticsearchConfig = new ElasticsearchConfig();
+//        String hosts = elasticsearchConfig.getHosts();
+//        System.out.println(hosts);
+//    }
 
     //获取客户端
     private RestHighLevelClient getElastic() {
@@ -73,5 +73,26 @@ public class MixTest {
                         new HttpHost("192.168.63.179", 9200, "http")
                 )
         );
+    }
+    @Test
+    public void test1111(){
+        int i = fun2(2016);
+        System.out.println(i);
+    }
+    int fun2(int n)
+    {
+        int num = 0;
+        int i, j;
+
+        for (i = 5; i <= n; i += 5)
+        {
+            j = i;
+            while (j % 5 == 0)
+            {
+                num++;
+                j /= 5;
+            }
+        }
+        return num;
     }
 }
