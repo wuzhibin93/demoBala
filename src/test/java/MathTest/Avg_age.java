@@ -1,22 +1,30 @@
-//package MathTest;
-//
-///**
-// * @ClassName :
-// * @Author Aprwu
-// * @Description : TODO(类的作用)
-// * @Date : Created in 13:51 2018/11/15
-// */
-//public class Avg_age {
-//    public static void main(String[] args) {
-//
-//        int anInt=0;
-//        for (int i = 0; i < ages.length; i++) {
-//            anInt += ages[i];
-//        }
-//
-//    }
-//    private int[] rec(String s){
-//        s
-//        return int[];
-//    }int
-//}
+package MathTest;
+
+import org.junit.Test;
+
+/**
+ * @ClassName :
+ * @Author Aprwu
+ * @Description : TODO(类的作用)
+ * @Date : Created in 13:51 2018/11/15
+ */
+public class Avg_age {
+    @Test
+    public void t1() {
+        double cosh = Math.cosh(2);
+        System.out.println(cosh);
+    }
+
+    @Test
+    public void t2(){
+        double pow = Math.pow(2, 3);
+        System.out.println(pow);
+    }
+
+    @Test
+    public void t3(){
+        double sqrt = Math.random();
+
+        System.out.println(sqrt);
+    }
+}
