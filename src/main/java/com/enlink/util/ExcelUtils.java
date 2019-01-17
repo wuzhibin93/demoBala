@@ -131,9 +131,8 @@ public class ExcelUtils {
      * @param sheetNum
      * @param startRow
      * @return
-     * @throws Exception
      */
-    private static List<Map<String, String>> getExcelData2Map(File file, int sheetNum, int startRow) throws Exception {
+    private static List<Map<String, String>> getExcelData2Map(File file, int sheetNum, int startRow) {
         try (InputStream input = new FileInputStream(file)) {
             return getExcelData2Map(input, file.getName().toLowerCase().endsWith("xls"), sheetNum, startRow);
         } catch (Exception e) {
@@ -227,7 +226,7 @@ public class ExcelUtils {
         char[] columns = columnName.toCharArray();
         for (int index = 0; index < columns.length; index++) {
             int ch = columnName.charAt(columns.length - index - 1);
-            columnNum += (int) (ch - 'A' + 1) * Math.pow(26, index);
+            columnNum += (ch - 'A' + 1) * Math.pow(26, index);
         }
         return columnNum;
     }

@@ -91,7 +91,7 @@ public enum HttpCode {
      * @param {String} message
      * @desc 私有构造方法定义本Enum的内容，不允许new对象。
      */
-    private HttpCode(String code, String message) {
+    HttpCode(String code, String message) {
         this.code = code;
         this.desc = message;
     }

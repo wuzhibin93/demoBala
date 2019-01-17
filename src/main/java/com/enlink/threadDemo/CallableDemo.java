@@ -12,7 +12,7 @@ import java.util.concurrent.FutureTask;
 
 class MyThread2 implements Callable<String>{
     @Override
-    public String call() throws Exception {
+    public String call() {
         for (int i = 0; i < 10; i++) {
             System.out.println("***********线程执行************"+i);
         }

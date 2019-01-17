@@ -48,7 +48,7 @@ public class UserController {
      * @return
      */
     @RequestMapping(value = "/delete2/{id}",method = RequestMethod.GET)
-    public AjaxResults delete2(@PathVariable String id) throws Exception {
+    public AjaxResults delete2(@PathVariable String id) {
         List<HttpHost> httpHosts = new ArrayList<>();
         System.out.println(esConfig.genHosts().length);
         for (String host : esConfig.genHosts()) {

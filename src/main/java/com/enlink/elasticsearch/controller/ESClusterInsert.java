@@ -26,7 +26,7 @@ import java.util.concurrent.*;
 @RestController
 public class ESClusterInsert {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
 //        ExecutorService executorService = Executors.newFixedThreadPool(20);
         for (int i = 0; i < 10; i++) {
 //            executorService.execute(new userInsert());

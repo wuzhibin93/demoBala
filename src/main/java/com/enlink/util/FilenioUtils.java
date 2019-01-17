@@ -33,7 +33,7 @@ public class FilenioUtils {
 		try (FileInputStream fis = new FileInputStream(source);
 				FileOutputStream fos = new FileOutputStream(dest);
 				FileChannel sourceCh = fis.getChannel();
-				FileChannel destCh = fos.getChannel();) {
+				FileChannel destCh = fos.getChannel()) {
 
 			MappedByteBuffer mbb = sourceCh.map(FileChannel.MapMode.READ_ONLY, 0, sourceCh.size());
 			destCh.write(mbb);
@@ -51,7 +51,7 @@ public class FilenioUtils {
 	public static void writeFile(String filePath, String content) {
 		try (FileOutputStream fos = new FileOutputStream(filePath);
 				// 获取一个通道
-				FileChannel fc = fos.getChannel();) {
+				FileChannel fc = fos.getChannel()) {
 
 			// 第二步 定义缓冲区
 			ByteBuffer buffer = ByteBuffer.wrap(content.getBytes());

@@ -72,7 +72,7 @@ public enum ResultCode {
     private String code;
     private String description;
 
-    private ResultCode(String code, String desc) {
+    ResultCode(String code, String desc) {
         this.code = code;
         this.description = desc;
     }

@@ -1,11 +1,14 @@
 package com.enlink.controller;
 
 import com.enlink.entity.GlobalParameterT;
+import com.enlink.response.AjaxResult;
 import com.enlink.response.AjaxResults;
 import com.enlink.response.ResultCode;
 import com.enlink.response.Results;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -26,6 +29,18 @@ public class GlobalParameterC {
 
     @RequestMapping("S")
     public AjaxResults T(){
+        System.out.println(globalParameterT.getHost());
+        LOGGER.error("test global and @Slf4j");
+        return Results.resultOf(ResultCode.OK, globalParameterT.getHost());
+    }
+    @GetMapping("G")
+    public AjaxResults G(){
+        System.out.println(globalParameterT.getHost());
+        LOGGER.error("test global and @Slf4j");
+        return Results.resultOf(ResultCode.OK, globalParameterT.getHost());
+    }
+    @PostMapping("E")
+    public AjaxResults E(){
         System.out.println(globalParameterT.getHost());
         LOGGER.error("test global and @Slf4j");
         return Results.resultOf(ResultCode.OK, globalParameterT.getHost());
