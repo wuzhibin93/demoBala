@@ -2,6 +2,7 @@ package com.enlink.dao;
 
 import com.enlink.db.MyUserSQLProvider;
 import com.enlink.entity.MyUser;
+import com.enlink.entity.User;
 import org.apache.ibatis.annotations.*;
 
 import java.util.List;
@@ -43,4 +44,6 @@ public interface MyUserDao {
     @SelectProvider(type = MyUserSQLProvider.class, method = "getByUsername")
     List<MyUser> listByUsername(@Param("username") String username,@Param("password") String password);
 
+    @Insert({"insert into user(user_id,user_name,user_host,user_age,user_area) values (#{user_id},#{user_name},#{user_host},#{user_age},#{user_area})"})
+    void insertUser(User user);
 }

@@ -1,10 +1,14 @@
 package com.enlink.controller;
 
+import com.enlink.dao.MyUserDao;
 import com.enlink.entity.Key;
+import com.enlink.entity.User;
 import com.enlink.response.AjaxResult;
 import com.enlink.response.AjaxResults;
 import com.enlink.response.ResultCode;
 import com.enlink.response.Results;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +21,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/hello")
 public class HelloController {
+    @Autowired
+    private MyUserDao myUserDao;
+
+
     @RequestMapping("oo")
     private AjaxResults Hello(){
         System.out.println("ssss");
@@ -26,5 +34,12 @@ public class HelloController {
     @RequestMapping("add")
     public AjaxResult add(Key key){
         return AjaxResult.ok(key);
+    }
+
+    @RequestMapping("adduser")
+    public AjaxResult addUser(User user){
+        System.out.println(user);
+        myUserDao.insertUser(user);
+        return AjaxResult.ok(user);
     }
 }
