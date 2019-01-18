@@ -15,18 +15,19 @@ import org.springframework.stereotype.Component;
 @Slf4j
 @Component
 @EnableScheduling
+@Async
 public class AsyncScheduleService {
-    @Async
+//    @Async
     @Scheduled(cron = "0/5 * * * * *")
     public void scheduled(){
         LOGGER.info(" =====>>>>>>使用cron {} ",System.currentTimeMillis());
     }
-    @Async
+//    @Async
     @Scheduled(fixedRate = 5000)
     public void scheduled1(){
         LOGGER.info(" =====>>>>>>fixedRate {} ",System.currentTimeMillis());
     }
-    @Async
+//    @Async
     @Scheduled(fixedDelay = 5000)
     public void scheduled2(){
         LOGGER.info(" =====>>>>>>fixedDelay {} ",System.currentTimeMillis());

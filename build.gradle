@@ -52,8 +52,8 @@ dependencies {
     compile "org.elasticsearch.client:elasticsearch-rest-high-level-client:$vElasticsearch"
     compile "org.elasticsearch:elasticsearch:$vElasticsearch"
     compile "org.elasticsearch.plugin:jdbc:$vElasticsearch"
-// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-quartz
-    compile group: 'org.springframework.boot', name: 'spring-boot-starter-quartz', version: '2.1.2.RELEASE'
+//    JAR包冲突
+//    compile group: 'org.springframework.boot', name: 'spring-boot-starter-quartz', version: '2.1.2.RELEASE'
 
     compile "com.google.code.gson:gson:$vGson"
     compile "com.google.guava:guava:25.1-jre"

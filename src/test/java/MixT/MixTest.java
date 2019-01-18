@@ -1,8 +1,6 @@
 package MixT;
 
-import com.enlink.config.ElasticsearchConfig;
 import org.apache.http.HttpHost;
-import org.assertj.core.util.Lists;
 import org.elasticsearch.action.search.SearchRequest;
 import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RestClient;
@@ -13,7 +11,6 @@ import org.junit.Test;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
 
 /**
  * @ClassName :
