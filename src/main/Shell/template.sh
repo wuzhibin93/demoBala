@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#curl -H "Content-Type:application/json" -XPUT 'localhost:9200/_template/<index>?pretty=true' -d'
 curl -H "Content-Type:application/json" -XPUT 'localhost:9200/_template/enlink?pretty=true' -d'
 {
     "template" : "*-filebeat-*",
