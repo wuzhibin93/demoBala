@@ -91,3 +91,8 @@ mybatis:
   type-aliases-package: com.enlink.elasticsearch.entity;com.enlink.entity
 host:
   ip : 127.0.0.1.0
+
+time:
+  corePoolSize: 10
+  maxPoolSize: 200
+  queueCapacity: 10

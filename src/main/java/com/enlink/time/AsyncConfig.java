@@ -1,5 +1,6 @@
 package com.enlink.time;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableAsync;
@@ -20,9 +21,12 @@ public class AsyncConfig {
     /*
         此处的成员变量应该使用@Value从配置中读取
      */
-    private int corePoolSize = 10;
-    private int maxPoolSize = 200;
-    private int queueCapacity = 10;
+    @Value("${time.corePoolSize}")
+    private int corePoolSize;
+    @Value("${time.maxPoolSize}")
+    private int maxPoolSize;
+    @Value("${time.queueCapacity}")
+    private int queueCapacity;
 
     @Bean
     public Executor taskExecutor(){
