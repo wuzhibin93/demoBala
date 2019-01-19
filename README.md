@@ -44,3 +44,6 @@ chmod 755 installES_cluster.sh
 eg:
 `./installES_cluster.sh <集群名称> <IP:PORT> <IP:PORT> <IP:PORT>`
 
+<div align="center">  
+<img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-11-16/49833984.jpg" width=""/>
+</br>

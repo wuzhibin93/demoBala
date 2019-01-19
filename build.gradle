@@ -11,6 +11,7 @@ buildscript {
 
     repositories {
         maven { url "http://repo.spring.io/plugins-release/" }
+//        maven { url "https://raw.githubusercontent.com/zerouwar/my-maven-repo/master"}
         mavenLocal()
         mavenCentral()
 
@@ -44,7 +45,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-devtools:$vSpringBoot"
     compile "org.springframework.boot:spring-boot-configuration-processor:$vSpringBoot"
     compile "org.springframework.boot:spring-boot-starter-actuator:$vSpringBoot"
-
+//    compile "cn.chenhuanming:octopus:1.0.0"
     compile "io.dropwizard.metrics:metrics-core:4.0.2"
     compile "com.squareup.okhttp3:okhttp:3.10.0"
     compile "org.apache.poi:poi:$vPoi"
@@ -54,6 +55,8 @@ dependencies {
     compile "org.elasticsearch.plugin:jdbc:$vElasticsearch"
 //    JAR包冲突
 //    compile group: 'org.springframework.boot', name: 'spring-boot-starter-quartz', version: '2.1.2.RELEASE'
+// https://mvnrepository.com/artifact/com.alipay.sofa/sofa-ark-maven-plugin
+    compile group: 'com.alipay.sofa', name: 'sofa-ark-maven-plugin', version: '0.5.2'
 
     compile "com.google.code.gson:gson:$vGson"
     compile "com.google.guava:guava:25.1-jre"
