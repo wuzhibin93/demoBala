@@ -22,7 +22,5 @@ public class JdkTest {
         jdkInterface.add();
         //打印增强过的类类型
         System.out.println("==============="+jdkInterface.getClass());
-
-
     }
 }
