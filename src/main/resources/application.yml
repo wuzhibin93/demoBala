@@ -85,10 +85,10 @@ spring:
         keyPassword:
         hostnameVerifier:
 
-
 mybatis:
   mapper-locations : classpath:mapper/*.xml
   type-aliases-package: com.enlink.elasticsearch.entity;com.enlink.entity
+
 host:
   ip : 127.0.0.1.0
 
