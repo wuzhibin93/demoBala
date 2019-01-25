@@ -14,8 +14,8 @@ import java.util.concurrent.TimeUnit;
  */
 public class TestScheduledExecutorService {
     public static void main(String[] args) {
-        ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
+        //ScheduledExecutorService scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
         //参数1、任务体，2、首次执行时间，3、任务执行间隔，4、间隔时间单位
-        scheduledExecutorService.scheduleAtFixedRate(()-> System.out.println("task ScheduledExecutorService" + new Date()),0,3, TimeUnit.SECONDS);
+        //scheduledExecutorService.scheduleAtFixedRate(()-> System.out.println("task ScheduledExecutorService" + new Date()),0,3, TimeUnit.SECONDS);
     }
 }

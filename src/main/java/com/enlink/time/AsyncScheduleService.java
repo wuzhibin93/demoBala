@@ -18,17 +18,17 @@ import org.springframework.stereotype.Component;
 @Async
 public class AsyncScheduleService {
 //    @Async
-    @Scheduled(cron = "0/5 * * * * *")
+    //@Scheduled(cron = "0/5 * * * * *")
     public void scheduled(){
         LOGGER.info(" =====>>>>>>使用cron {} ",System.currentTimeMillis());
     }
 //    @Async
-    @Scheduled(fixedRate = 5000)
+    //@Scheduled(fixedRate = 5000)
     public void scheduled1(){
         LOGGER.info(" =====>>>>>>fixedRate {} ",System.currentTimeMillis());
     }
 //    @Async
-    @Scheduled(fixedDelay = 5000)
+    //@Scheduled(fixedDelay = 5000)
     public void scheduled2(){
         LOGGER.info(" =====>>>>>>fixedDelay {} ",System.currentTimeMillis());
     }

@@ -19,6 +19,6 @@ public class TestTimer {
             }
         };
         Timer timer = new Timer();
-        timer.schedule(timerTask,10,3000);
+        //timer.schedule(timerTask,10,3000);
     }
 }
