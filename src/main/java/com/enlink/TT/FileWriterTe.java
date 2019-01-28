@@ -8,7 +8,7 @@ import java.io.IOException;
 /**
  * @ClassName :
  * @Author Aprwu
- * @Description : TODO(类的作用)
+ * @Description : TODO(FileWriter的使用)
  * @Date : Created in 14:38 2019/1/28
  */
 public class FileWriterTe {
