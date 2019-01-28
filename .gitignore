@@ -1,4 +1,5 @@
-.idea/*
+.idea/libraries
+.idea/modules
 .gitignore
 .gradle/4.9/fileChanges/last-build.bin
 .gradle/4.9/fileContent/annotation-processors.bin
