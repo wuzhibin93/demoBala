@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import sun.security.provider.MD5;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.util.List;
 
 /**
@@ -54,5 +55,25 @@ public class HelloController {
         System.out.println(user);
         myUserDao.insertUser(user);
         return AjaxResult.ok(user);
+    }
+    @RequestMapping("ht")
+    public String ht(HttpServletResponse response,HttpServletRequest request){
+        System.out.println(request.getAuthType());
+        System.out.println(request.getMethod());
+        System.out.println(response.getStatus());
+        return "";
+    }
+
+    @RequestMapping("clazz")
+    public void zz(){
+        User user = new User();
+        Class<? extends User> aClass = user.getClass();
+        System.out.println("isInterface:"+aClass.isInterface());
+        System.out.println("isAnnotation:"+aClass.isAnnotation());
+        System.out.println("isEnum:"+aClass.isEnum());
+        System.out.println("isAnonymousClass:"+aClass.isAnonymousClass());
+        System.out.println("isArray:"+aClass.isArray());
+        Class<? extends MyUserDao> aClass1 = myUserDao.getClass();
+        System.out.println("CodeSource:"+aClass1.getProtectionDomain().getCodeSource());
     }
 }
