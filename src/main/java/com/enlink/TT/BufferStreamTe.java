@@ -5,7 +5,9 @@ import java.io.*;
 /**
  * @ClassName :
  * @Author Aprwu
- * @Description : TODO(字节缓冲流的使用)
+ * @Description : TODO(字节缓冲流的使用。当我们使用缓存流包在字节流上面的时候，只需要关闭上层的处理就来可以了
+ *  java会帮我们关闭下层的节点流
+ * )
  * @Date : Created in 14:45 2019/1/28
  */
 public class BufferStreamTe {
