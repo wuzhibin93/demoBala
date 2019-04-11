@@ -45,5 +45,5 @@ eg:
 `./installES_cluster.sh <集群名称> <IP:PORT> <IP:PORT> <IP:PORT>`
 
 <div align="center">  
-<img src="http://my-blog-to-use.oss-cn-beijing.aliyuncs.com/18-11-16/49833984.jpg" width=""/>
+<a href="https://996.icu"><img src="https://img.shields.io/badge/link-996.icu-red.svg" alt="996.icu" /></a>
 </br>
